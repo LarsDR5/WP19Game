@@ -1,6 +1,6 @@
 4 On A Row
 
-This project is all about a game called "4 op een rij", or so called Connect the Dots.
+This project is all about a game called "4 op een rij", a.k.a. Connect Four.
 The game is for two players. 
 
 A JSON-file is made for every game between two players for saving the gamestate.
