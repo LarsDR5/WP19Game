@@ -4,6 +4,10 @@
     <title>Four on a row</title>
     <?php include 'tpl/head_end.html'; ?>
     <body>
-        <h1>Yeah boii</h1>
+        <?php include 'header.html'; ?>
+        <div id='main_div'>
+            <h1>Yeah boii</h1>
+        </div>
+        <?php include 'header.html'; ?>
     </body>
 </html>

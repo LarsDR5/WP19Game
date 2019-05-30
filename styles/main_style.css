@@ -4,3 +4,24 @@
     padding: 0px;
     margin: 0px;
 }
+
+body, html{
+    height: 100%;
+}
+
+header{
+    height: 70px;
+    background: rgb(168, 181, 196);
+}
+
+#main_div{
+    min-height: 100%;
+}
+
+footer{
+    height: 60px;
+    background: rgb(168, 181, 196);
+    clear: both;
+    position: relative;
+    margin-top: -60px;
+}
