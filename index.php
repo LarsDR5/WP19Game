@@ -8,6 +8,6 @@
         <div id='main_div'>
             <h1>Yeah boii</h1>
         </div>
-        <?php include 'header.html'; ?>
+        <?php include 'footer.html'; ?>
     </body>
 </html>
