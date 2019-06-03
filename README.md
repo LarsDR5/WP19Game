@@ -12,3 +12,21 @@ On the main screen the user is able to start a game with a random person, genera
 
 A possible extension is a leaderboard, where a user gets a point for every game won.
 Another possible extension is different themes from which the players can choose, e.g. Minecraft or Anime.
+
+Division of tasks:
+* Front-end: 
+        * JSON load game state to table
+        * PHP templates
+        * Playfield
+        * Click drop coin action
+    * Erik
+    * Lars
+* Back-end:
+    * Ward
+        * New game/code generator
+        * PHP-session
+    * Rolf
+        * JSON save/load (AJAX)
+        * Game state checker
+
+        
