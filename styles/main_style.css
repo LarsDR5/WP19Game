@@ -15,12 +15,15 @@ header{
 }
 
 #main_div{
-    
+    background-image: url('../img/backgroundhome.png');
+    background-repeat: no-repeat;
+    background-position: left; 
+    margin-left: 10%;
 }
 
 #under_main_div {
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 15%;
+    margin-left: 45%;
     margin-top: 10%;
 }
 
@@ -33,5 +36,16 @@ footer{
 }
 
 .welcomeText {
-    
+
+}
+
+.footerText {
+    text-align: center;
+    color: grey;
+    margin-top: 15px;
+}
+
+.headerText {
+    text-align: center;
+    color: grey;
 }
