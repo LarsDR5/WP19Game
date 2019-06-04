@@ -12,6 +12,10 @@ body, html{
 header{
     height: 60px;
     background: rgb(168, 181, 196);
+    padding-bottom: 200px;
+    background-image: url(../img/headerbackground.png);
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 #main_div{
@@ -46,6 +50,9 @@ footer{
 }
 
 .headerText {
-    text-align: center;
+    text-align: left;
     color: grey;
+    font-size: 70px;
+    padding-top: 50px;
+    padding-left: 200px;
 }
