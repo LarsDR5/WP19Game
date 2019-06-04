@@ -9,7 +9,7 @@
         <?php include 'header.html'; ?>
         <div id='main_div'>
             <div id='under_main_div'>
-                <h1 class="welcomeText">Welcome to Four on a Row!</h1>
+                <h1 class="welcomeText">Welcome!</h1>
                 <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                 <br />
                 <button type="button" class="btn btn-primary btn-lg btn-block" id="codeButton" onclick="randomString();">Generate Code</button>
