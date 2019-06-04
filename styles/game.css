@@ -1,0 +1,71 @@
+#game_info{
+    text-align: center;
+}
+
+table#game_grid{
+    padding: 10px;
+    margin: 10px;
+}
+
+#game_body{
+    border-radius: 10px;
+    box-shadow: 0 0 0 10px rgb(0, 55, 156);
+    background: rgb(0, 55, 156);
+    padding: 20px;
+}
+
+thead{
+    height: 150px;
+}
+
+td{
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+}
+
+.table_button{
+    height: 100%;
+    width: 100%;
+    font-size: 3em;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.table_button:hover{
+    font-size: 5em;
+    transition: ease-out 0.2s;
+}
+
+.table_button:active{
+    color: rgb(0, 89, 255);
+}
+
+.disabled{
+    visibility: hidden;
+}
+
+.disabled:before{
+    content: '\02716';
+    visibility: visible;
+}
+
+.disc{
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    height: 100%;
+    width: 100%;
+}
+
+.yellow{
+    background-color: rgb(255, 230, 0);
+}
+
+.red{
+    background-color: rgb(255, 0, 0);
+}
+
+.empty{
+    background-color: #FFF;
+}
