@@ -18,6 +18,11 @@ thead{
     height: 150px;
 }
 
+th{
+    height: 150px;
+}
+
+
 td{
     height: 100px;
     width: 100px;
@@ -68,4 +73,11 @@ td{
 
 .empty{
     background-color: #FFF;
+}
+
+@media(max-width: 425px){
+    td{
+        height: 15vw;
+        width: 15vw;
+    }
 }

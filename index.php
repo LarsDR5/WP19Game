@@ -8,8 +8,8 @@
         <?php include 'header.html'; ?>
         <div id='main_div'>
             <div id='start_screen'>
-                <img src="media/img/backgroundhome.png" alt="An icon">
-                <div id='under_main_div'>
+                <img id='bg_img' src="media/img/backgroundhome.png" alt="An icon">
+                <div id='input_screen'>
                     <h1 class="welcomeText">Welcome to Four on a Row!</h1>
                     <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                     <br />
