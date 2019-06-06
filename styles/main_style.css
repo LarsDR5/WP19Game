@@ -82,4 +82,11 @@ footer{
         width: 400px;
     }
 
+    header{
+    background: none;
+    height: 60px;
+    background: rgb(168, 181, 196);
+    padding-bottom: 200px;
+}
+
 }
