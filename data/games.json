@@ -1,44 +1,44 @@
 [{
-  "sessionID1": 12345678,
-  "sessionID2": 23456789,
+  "sessionID0": 12345678,
+  "sessionID1": 23456789,
   "turn": 1,
   "creationDateTime": 2019-05-29-13:59,
   "lastActionDateTime": 2019-05-29-15:34,
   "grid2Darray": [
     [
-      0,
-      0,
+      null,
+      null,
       1,
       1,
-      2
+      0
     ],
     [
-      2,
       0,
+      null,
       1,
-      0,
+      null,
       1
     ],
     [
-      0,
+      null,
       1,
-      0,
+      null,
       1,
-      2
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
       0
     ],
     [
-      0,
-      0,
-      0,
-      0,
-      0
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null
     ]
   ]
 }]

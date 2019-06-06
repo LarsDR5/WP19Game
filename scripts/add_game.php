@@ -6,17 +6,20 @@ if (isset($_POST['codeButton'])) {
 
     include('create_session.php');
 
+    $creationTime = time();
+
     $game = array(
-        "sessionID1" => $_SESSION['id'],
-        "sessionID2" => 0,
-        "turn" => 1,
+        "sessionID0" => $_SESSION['id'],
+        "sessionID1" => null,
+        "turn" => null,
         "creationDateTime" => time(),
         "lastActionDateTime" => time(),
         "grid" => array(
-            array(0,0,0,0,0),
-            array(0,0,0,0,0),
-            array(0,0,0,0,0),
-            array(0,0,0,0,0),
-            array(0,0,0,0,0)
-        ));
+            array(null, null, null, null, null),
+            array(null, null, null, null, null),
+            array(null, null, null, null, null),
+            array(null, null, null, null, null),
+            array(null, null, null, null, null)
+        )
+    );
 }
