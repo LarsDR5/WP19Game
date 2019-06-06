@@ -20,6 +20,7 @@ thead{
 
 th{
     height: 150px;
+    width: 100px;
 }
 
 
@@ -79,5 +80,8 @@ td{
     td{
         height: 15vw;
         width: 15vw;
+    }
+    th{
+        max-width: 15vw;
     }
 }

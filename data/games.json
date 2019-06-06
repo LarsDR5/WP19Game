@@ -2,8 +2,8 @@
   "sessionID1": 12345678,
   "sessionID2": 23456789,
   "turn": 1,
-  "creationDateTime": 2019-05-29-13:59,
-  "lastActionDateTime": 2019-05-29-15:34,
+  "creationDateTime": "2019-05-29-13:59",
+  "lastActionDateTime": "2019-05-29-15:34",
   "grid2Darray": [
     [
       0,
