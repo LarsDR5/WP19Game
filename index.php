@@ -22,7 +22,7 @@
                                 <input type="text" class="form-control" id="codeInput" placeholder="Enter a code to start a game!">
                         </div>
                     </form>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" id="startButton">Start Game!</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="startButton" onclick="window.location.href='../WP19Game/game.php'">Start Game!</button>
                 </div>
             </div>
         </div>
