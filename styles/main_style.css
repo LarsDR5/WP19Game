@@ -19,7 +19,7 @@ header{
     height: 60px;
     background: rgb(168, 181, 196);
     padding-bottom: 200px;
-    background-image: url(../img/headerbackground.png);
+    background-image: url(../media/img/headerbackground.png);
     background-repeat: no-repeat;
     background-position: right;
 }
