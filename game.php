@@ -11,32 +11,20 @@
     <div id='main_div'>
         <div id='game'>
             <div id='game_info'>
-                <h1>Your turn!</h1>
+                <h1 id='turn_state'></h1>
             </div>
             <table id='game_grid'>
                 <thead>
                     <tr id='click_row'>
-                        <th><button class='table_button' id='0' value='0'>&#8681;</button></th>
-                        <th><button class='table_button' id='1' value='1'>&#8681;</button></th>
-                        <th><button class='table_button' id='2' value='2'>&#8681;</button></th>
-                        <th><button class='table_button' id='3' value='3'>&#8681;</button></th>
-                        <th><button class='table_button' id='4' value='4'>&#8681;</button></th>
+                        <th><button class='table_button' id='0' value='0'><span>&#8681;</span></button></th>
+                        <th><button class='table_button' id='1' value='1'><span>&#8681;</span></button></th>
+                        <th><button class='table_button' id='2' value='2'><span>&#8681;</span></button></th>
+                        <th><button class='table_button' id='3' value='3'><span>&#8681;</span></button></th>
+                        <th><button class='table_button' id='4' value='4'><span>&#8681;</span></button></th>
                     </tr>
                 </thead>
                 <tbody id='game_body'>
-                    <?php
-                        for($i = 0; $i < 5; $i++){
-                    ?>
-                    <tr>
-                        <?php
-                            for($ii = 0; $ii < 5; $ii++){
-                        ?>
-                        <td><div class='yellow disc'></div></td>
-                        <?php }?>
-                    </tr>
-                    <?php
-                        }
-                    ?>
+
                 </tbody>
             </table>
         </div>

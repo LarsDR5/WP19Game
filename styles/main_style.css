@@ -17,7 +17,7 @@ body{
 
 header{
     height: 60px;
-    background: rgb(168, 181, 196);
+    background: rgb(126, 186, 255);
     padding-bottom: 200px;
     background-image: url(../media/img/headerbackground.png);
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ header{
 
 footer{
     width: 100%;
-    background: rgb(168, 181, 196);
+    background: rgb(126, 186, 255);
     padding: 10px 0px;
 }
 
@@ -83,10 +83,8 @@ footer{
     }
 
     header{
-    background: none;
-    height: 60px;
-    background: rgb(168, 181, 196);
-    padding-bottom: 200px;
-}
-
+        height: 60px;
+        background-image: none;
+        padding-bottom: 200px;
+    }
 }

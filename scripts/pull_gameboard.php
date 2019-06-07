@@ -4,13 +4,14 @@
     $file = file_get_contents('../data/games.json');
     $content = json_decode($file, true);
 
-    $board = $content[0]['grid2Darray'];
+    //1 means a 
+    $board = array_reverse($content[0]['grid2Darray']);
     foreach($board as $key => $row){
         ?><tr><?php
         foreach($row as $key => $value){
-            if($value == 1){
+            if($value === 0){
                 $colour = 'red';
-            }else if($value == 2){
+            }else if($value === 1){
                 $colour = 'yellow';
             }else{
                 $colour = 'empty';
