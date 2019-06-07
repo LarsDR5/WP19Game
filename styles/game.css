@@ -1,6 +1,10 @@
-#game_info{
-    text-align: center;
+#game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 
 table#game_grid{
     padding: 10px;
@@ -15,11 +19,11 @@ table#game_grid{
 }
 
 thead{
-    height: 150px;
+    height: 200px;
 }
 
 th{
-    height: 150px;
+    height: 200px;
     width: 100px;
 }
 
@@ -40,12 +44,21 @@ td{
 }
 
 .table_button:hover{
-    font-size: 5em;
+    font-size: 4em;
     transition: ease-out 0.2s;
 }
 
 .table_button:active{
-    color: rgb(0, 89, 255);
+    color: rgb(255, 0, 0);
+}
+
+.table_button:disabled span{
+    display: none;
+}
+
+.table_button:disabled:after,
+.table_button[disabled]:after{
+    content: '\02716';
 }
 
 .disabled{
@@ -76,7 +89,7 @@ td{
     background-color: #FFF;
 }
 
-@media(max-width: 425px){
+@media(max-width: 580px){
     td{
         height: 15vw;
         width: 15vw;
