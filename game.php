@@ -16,11 +16,11 @@
             <table id='game_grid'>
                 <thead>
                     <tr id='click_row'>
-                        <th><button class='table_button' id='0' value='0'><span>&#8681;</span></button></th>
-                        <th><button class='table_button' id='1' value='1'><span>&#8681;</span></button></th>
-                        <th><button class='table_button' id='2' value='2'><span>&#8681;</span></button></th>
-                        <th><button class='table_button' id='3' value='3'><span>&#8681;</span></button></th>
-                        <th><button class='table_button' id='4' value='4'><span>&#8681;</span></button></th>
+                        <th><button class='table_button' id='0' value='0'><span>&#10145;</span></button></th>
+                        <th><button class='table_button' id='1' value='1'><span>&#10145;</span></button></th>
+                        <th><button class='table_button' id='2' value='2'><span>&#10145;</span></button></th>
+                        <th><button class='table_button' id='3' value='3'><span>&#10145;</span></button></th>
+                        <th><button class='table_button' id='4' value='4'><span>&#10145;</span></button></th>
                     </tr>
                 </thead>
                 <tbody id='game_body'>
