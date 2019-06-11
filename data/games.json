@@ -44,3 +44,49 @@
         ]
     }
 ]
+=======
+[{
+  "sessionID0": 12345678,
+  "sessionID1": 23456789,
+  "turn": 1,
+  "creationDateTime": 2019-05-29-13:59,
+  "lastActionDateTime": 2019-05-29-15:34,
+  "grid2Darray": [
+    [
+      null,
+      null,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      null,
+      1,
+      null,
+      1
+    ],
+    [
+      null,
+      1,
+      null,
+      1,
+      0
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  ]
+}]
+>>>>>>> back-end
