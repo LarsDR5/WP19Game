@@ -3,7 +3,7 @@
 <?php include 'tpl/head_start.html'; ?>
 <title>Four on a row</title>
 <link rel="stylesheet" href="styles/game.css">
-<script type='text/javascript' src="scripts/game.js"></script>
+<script type='text/javascript' src="scripts/in_game/game.js"></script>
 <?php include 'tpl/head_end.html'; ?>
 
 <body>
