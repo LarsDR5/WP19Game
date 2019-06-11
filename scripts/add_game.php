@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['codeButton'])) {
-    $game_id = uniqid();
+    $game_id = $_POST['code'];
     $json_filename = "{$game_id}.json";
     $json_file = fopen("../data/{$json_filename}", 'w');
 
@@ -23,3 +23,6 @@ if (isset($_POST['codeButton'])) {
         )
     );
 }
+
+
+?>
