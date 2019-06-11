@@ -1,8 +1,6 @@
 <?php
 // Source: https://www.php.net/manual/en/function.session-create-id.php
-
 // To be called when a game is made, or when a player connects to a game.
-
 // Starts a session
 function start_session() {
     session_start();
@@ -12,7 +10,6 @@ function start_session() {
         session_start();
     }
 }
-
 // My session regenerate id function
 function regenerate_id() {
     // Call session_create_id() while session is active to make sure collision free.
@@ -33,7 +30,6 @@ function regenerate_id() {
     // Start with custom session ID
     session_start();
 }
-
 start_session();
 regenerate_id();
 ?>
