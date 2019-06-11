@@ -13,7 +13,7 @@
                     <h1 class="welcomeText">Welcome to Four on a Row!</h1>
                     <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                     <br />
-                    <button type="button" class="btn btn-primary btn-lg btn-block" id="codeButton" onclick="randomString();">Generate Code</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" name="codeButton" onclick="randomString();">Generate Code</button>
                     <br />
                     <h3 class="welcomeText">...or enter a code from a friend!</h3>
                     <form>
