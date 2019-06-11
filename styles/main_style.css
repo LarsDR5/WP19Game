@@ -4,3 +4,87 @@
     padding: 0px;
     margin: 0px;
 }
+
+html{
+    min-height: 100vh;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+header{
+    height: 60px;
+    background: rgb(126, 186, 255);
+    padding-bottom: 200px;
+    background-image: url(../media/img/headerbackground.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#main_div{
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0px;
+}
+
+#start_screen{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#bg_img{
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
+    clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
+}
+
+
+#input_screen{
+}
+
+footer{
+    width: 100%;
+    background: rgb(126, 186, 255);
+    padding: 10px 0px;
+}
+
+.welcomeText {
+
+}
+
+.footerText {
+    text-align: center;
+    color: grey;
+}
+
+.headerText {
+    text-align: left;
+    color: grey;
+    font-size: 70px;
+    padding-top: 50px;
+    padding-left: 200px;
+}
+
+@media(max-width: 1000px){
+    #start_screen{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #bg_img{
+        width: 400px;
+    }
+
+    header{
+        height: 60px;
+        background-image: none;
+        padding-bottom: 200px;
+    }
+}
