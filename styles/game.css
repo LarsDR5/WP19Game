@@ -43,9 +43,16 @@ td{
     border: none;
 }
 
+.table_button span{
+    display: block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
 .table_button:hover{
     font-size: 4em;
     transition: ease-out 0.2s;
+    color: rgb(255, 0, 0);
 }
 
 .table_button:active{

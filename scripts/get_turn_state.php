@@ -1,4 +1,5 @@
 <?php
+    //This script will return a boolean based on if the player calling this script is ready to make his turn.
     $sessionid = '12345678';
 
     $file = file_get_contents('../data/games.json');
