@@ -4,7 +4,7 @@
     $file = file_get_contents('../data/games.json');
     $content = json_decode($file, true);
 
-    //1 means a 
+    //1 means a yellow coin and 0 a red coin
     $board = array_reverse($content[0]['grid2Darray']);
     foreach($board as $key => $row){
         ?><tr><?php

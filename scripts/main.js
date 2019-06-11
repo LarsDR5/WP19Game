@@ -1,3 +1,4 @@
+// randomString()returs a random string of length 4 containing a-z A-Z and 0-9
 function randomString() {
 	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
 	var string_length = 4;

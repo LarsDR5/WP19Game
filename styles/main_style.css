@@ -71,6 +71,7 @@ footer{
     padding-left: 200px;
 }
 
+/* Change header and start screen on smaller screens */
 @media(max-width: 1000px){
     #start_screen{
         width: 100%;

@@ -5,7 +5,7 @@
     <script type="text/javascript" src="scripts/main.js"></script> 
     <?php include 'tpl/head_end.html'; ?>
     <body>
-        <?php include 'header.html'; ?>
+        <?php include 'tpl/header.html'; ?>
         <div id='main_div'>
             <div id='start_screen'>
                 <img id='bg_img' src="media/img/backgroundhome.png" alt="An icon">
@@ -13,6 +13,7 @@
                     <h1 class="welcomeText">Welcome to Four on a Row!</h1>
                     <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                     <br />
+                    <!-- On click, generate a random string to use to match to an opponent -->
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="codeButton" onclick="randomString();">Generate Code</button>
                     <br />
                     <h3 class="welcomeText">...or enter a code from a friend!</h3>
@@ -26,6 +27,6 @@
                 </div>
             </div>
         </div>
-        <?php include 'footer.html'; ?>
+        <?php include 'tpl/footer.html'; ?>
     </body>
 </html>

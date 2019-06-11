@@ -7,7 +7,7 @@
 <?php include 'tpl/head_end.html'; ?>
 
 <body>
-    <?php include 'header.html'; ?>
+    <?php include 'tpl/header.html'; ?>
     <div id='main_div'>
         <div id='game'>
             <div id='game_info'>
@@ -29,7 +29,7 @@
             </table>
         </div>
     </div>
-    <?php include 'footer.html'; ?>
+    <?php include 'tpl/footer.html'; ?>
 </body>
 
 </html>
