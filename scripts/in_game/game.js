@@ -50,6 +50,7 @@ function refreshBoard(){
 function updateTurnState(){
     /**
      * Updates the turn state using ajax to notify the user.
+     * Also enables and disables the buttons accordingly.
      */
     let request = $.post('scripts/in_game/get_turn_state.php');
 
