@@ -1,3 +1,4 @@
+<? include 'scripts/add_game.php' ?>
 <!DOCTYPE html>
 <html lang='en'>
 <?php include 'tpl/head_start.html'; ?>

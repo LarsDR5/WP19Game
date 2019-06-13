@@ -1,0 +1,44 @@
+{
+    "sessionID0": "d85af7805a903f0ac9d754bfa260e897",
+    "sessionID1": null,
+    "turn": null,
+    "creationDateTime": 1560428730,
+    "lastActionDateTime": 1560428730,
+    "grid": [
+        [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    ]
+}
