@@ -16,8 +16,7 @@
                     <h1 class="welcomeText">Welcome to Four on a Row!</h1>
                     <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                     <br />
-                    <form action="game.php" method="post">
-                        <input type="hidden" name="code" value="<? $code ?>">
+                    <form action="scripts/handlecreation.php" method="post">
                         <button type="submit" class="btn btn-primary btn-lg btn-block" name="codeButton">Generate Code</button>
                     </form>
                     <br />
