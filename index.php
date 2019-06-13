@@ -4,7 +4,6 @@
         include 'tpl/head_start.html';
     ?>
     <title>Four on a row</title>
-    <script type="text/javascript" src="scripts/main.js"></script> 
     <?php include 'tpl/head_end.html'; ?>
     <body>
         <?php include 'header.html'; ?>
