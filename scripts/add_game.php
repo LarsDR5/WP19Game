@@ -19,7 +19,7 @@ if (isset($_POST['value'])) {
             array(null, null, null, null, null)
         )
     );
-    fwrite($json_file, json_encode($game));
+    fwrite($json_file, json_encode($game, JSON_PRETTY_PRINT));
     fclose($json_file);
 }
 ?>
