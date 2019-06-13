@@ -2,6 +2,7 @@ $(function(){
     // Updates the board and turn state when the page loads
     refreshBoard();
     updateTurnState();
+    displayVictory();
 
     //When a user clicks on a button this updates the board and buttons.
     $(".table_button").on('click', function() {
@@ -84,4 +85,19 @@ function enableButtons(){
     buttons.each(function (button) {
         $(this).prop('disabled', false);
     });
+}
+
+
+function displayVictory(){
+    $('#turn_state').css('display', 'none');
+    $('#outcome').css('color', 'green');
+    $('#outcome').append('You have Won!');
+    $('#retry_button').show();
+}
+
+function displayDefeat(){
+    $('#turn_state').css('display', 'none');
+    $('#outcome').css('color', 'red');
+    $('#outcome').append('You have been defeated!');
+    $('#retry_button').show();    
 }

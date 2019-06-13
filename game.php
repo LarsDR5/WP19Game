@@ -12,6 +12,9 @@
         <div id='game'>
             <div id='game_info'>
                 <h1 id='turn_state'></h1>
+                <h1 id='outcome'></h1>
+                <button type="button" onclick="location.href='index.php';" 
+                class="btn btn-primary btn-lg btn-block" id="retry_button" style='display: none;' >Retry</button>
             </div>
             <table id='game_grid'>
                 <thead>
