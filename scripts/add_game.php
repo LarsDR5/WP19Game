@@ -9,6 +9,7 @@ if (isset($_POST['value'])) {
         "sessionID0" => $_SESSION['id'],
         "sessionID1" => null,
         "turn" => null,
+        "state" => null,
         "creationDateTime" => time(),
         "lastActionDateTime" => time(),
         "grid" => array(
