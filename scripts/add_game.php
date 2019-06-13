@@ -22,5 +22,6 @@ if (isset($_POST['value'])) {
     );
     fwrite($json_file, json_encode($game, JSON_PRETTY_PRINT));
     fclose($json_file);
+    die();
 }
 ?>
