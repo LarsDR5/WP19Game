@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-    <?php include 'tpl/head_start.html'; ?>
+    <?php
+        include 'tpl/head_start.html';
+        $code = include 'scripts/generate_code.php'
+    ?>
     <title>Four on a row</title>
     <script type="text/javascript" src="scripts/main.js"></script> 
     <?php include 'tpl/head_end.html'; ?>
@@ -13,7 +16,10 @@
                     <h1 class="welcomeText">Welcome to Four on a Row!</h1>
                     <h3 class="welcomeText">To start a game with a friend, generate a code...</h3>
                     <br />
-                    <button type="button" class="btn btn-primary btn-lg btn-block" name="codeButton" onclick="randomString();">Generate Code</button>
+                    <form action="game.php" method="post">
+                        <input type="hidden" name="code" value="<? $code ?>">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="codeButton">Generate Code</button>
+                    </form>
                     <br />
                     <h3 class="welcomeText">...or enter a code from a friend!</h3>
                     <form>

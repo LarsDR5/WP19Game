@@ -1,12 +1,13 @@
 <?php
-if (isset($_POST['codeButton'])) {
-    $game_id = $_POST['code'];
+
+if (isset($_POST['value'])) {
+    $game_id = $_POST['value'];
     $json_filename = "{$game_id}.json";
     $json_file = fopen("../data/{$json_filename}", 'w');
 
     include('create_session.php');
-
     $creationTime = time();
+
 
     $game = array(
         "sessionID0" => $_SESSION['id'],
@@ -22,6 +23,9 @@ if (isset($_POST['codeButton'])) {
             array(null, null, null, null, null)
         )
     );
+
+    fwrite($json_file, json_encode($game));
+    fclose($json_file);
 }
 
 
