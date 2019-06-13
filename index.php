@@ -24,7 +24,7 @@ $code = include 'scripts/generate_code.php'
             <h3 class="welcomeText">...or enter a code from a friend!</h3>
             <form>
                 <div class="form-group">
-                    <label for="codeInput"></label>
+                    <label for="codeInput" name="codeInput"></label>
                     <input type="text" class="form-control" id="codeInput" placeholder="Enter a code to start a game!">
                 </div>
             </form>
