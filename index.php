@@ -22,10 +22,10 @@ $code = include 'scripts/generate_code.php'
             </form>
             <br />
             <h3 class="welcomeText">...or enter a code from a friend!</h3>
-            <form>
-                <div class="form-group" action="game.php" method="post">
-                    <label for="codeInput" name="codeInput"></label>
-                    <input type="text" class="form-control" id="codeInput" placeholder="Enter a code to start a game!">
+            <form action="game.php" method="post">
+                <div class="form-group">
+                    <label for="codeInput"></label>
+                    <input type="text" class="form-control" name="codeInput" id="codeInput" placeholder="Enter a code to start a game!">
                 </div>
             </form>
             <button type="button" class="btn btn-primary btn-lg btn-block" id="startButton">Start Game!</button>
