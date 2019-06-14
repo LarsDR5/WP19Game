@@ -1,16 +1,17 @@
 <?php
     // This script handles the turn and updates the gameboard when called given a POST variabled named index.
+    session_start();
+    $session_id = session_id();
+    $file_path = "../../data/" . $_SESSION['gameID'] . ".json";
 
-    //$file_path = "../data/" . $_SESSION['game_id'] . ".json";
-
-    $file = file_get_contents('../../data/games.json');
+    $file = file_get_contents($file_path);
     $content = json_decode($file, true);
 
-    $board = &$content[0]['grid2Darray'];
+    $board = &$content['grid'];
 
     $index = $_POST['index'];
 
-    $turn = &$content[0]['turn'];
+    $turn = &$content['turn'];
     
     foreach($board as $key => $row){
         if(!isset($row[$index])){
@@ -21,8 +22,8 @@
     
     changeTurn($turn);
     
-    $game_data = fopen('../../data/games.json', 'w'); 
-    fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT)); 
+    $game_data = fopen($file_path, 'w');
+    fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT));
     fclose($game_data);
 
     function changeTurn(&$turn){

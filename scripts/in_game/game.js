@@ -4,7 +4,7 @@ $(function(){
     updateTurnState();
     checkGameState();
     // displayVictory();
-
+    var updated = false;
     //When a user clicks on a button this updates the board and buttons.
     $(".table_button").on('click', function() {
         disableButtons();
@@ -15,12 +15,12 @@ $(function(){
             refreshBoard();
             updateTurnState();
             checkGameState();
+            updated = false;
         });
     });
     
 
     //This part checks if there has been a turn change, and changes depending on the returned value.
-    var updated = false;
     window.setInterval(function(){
         let request = $.post('scripts/in_game/get_turn_state.php');
 
@@ -30,8 +30,6 @@ $(function(){
                 refreshBoard();
                 enableButtons();
                 updated = true;
-            }else if(data == 0 && updated == true){
-                updated = false;
             }
         });
         checkGameState();
@@ -84,11 +82,25 @@ function disableButtons(){
 function enableButtons(){
     /**
      * Enables all buttons to place a disc.
+     *  and checks whether a column is full so you cannot place more discs.
      */
-    let buttons = $('.table_button');
-    buttons.each(function (button) {
-        $(this).prop('disabled', false);
-    });
+    let request = $.post('scripts/in_game/get_full_column_ids.php');
+
+    request.done(function(ids){
+        let buttons = $('.table_button');
+        ids = JSON.parse(ids);
+        if(Object.values(ids).length == 5){
+            displayTie();
+        }
+        buttons.each(function (button) {
+            $(this).prop('disabled', false)
+            for(id in ids){
+                if($(this).attr('id') == id){
+                    $(this).prop('disabled', true);
+                }
+            }
+        });
+    })
 }
 
 /**
@@ -109,15 +121,34 @@ function checkGameState() {
 }
 
 function displayVictory(){
+    /**
+     * Removes the turn states and displays a victory message.
+     */
     $('#turn_state').css('display', 'none');
     $('#outcome').css('color', 'green');
+    $('#outcome').empty();
     $('#outcome').append('You have Won!');
     $('#retry_button').show();
 }
 
-function displayDefeat(){
+function displayDefeat() {
+    /**
+     * Removes the turn states and displays a defeat message.
+     */
     $('#turn_state').css('display', 'none');
     $('#outcome').css('color', 'red');
+    $('#outcome').empty();
     $('#outcome').append('You have been defeated!');
     $('#retry_button').show();    
+}
+
+function displayTie(){
+    /**
+     * Removes the turn states and displays a message indicating a tie.
+     */
+    $('#turn_state').css('display', 'none');
+    $('#outcome').css('color', 'orange');
+    $('#outcome').empty();
+    $('#outcome').append('No one has won! You both are terrible at this game!');
+    $('#retry_button').show();
 }

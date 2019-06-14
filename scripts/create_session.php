@@ -30,6 +30,15 @@ function regenerate_id() {
     // Start with custom session ID
     session_start();
 }
-start_session();
-regenerate_id();
+
+// credits https://stackoverflow.com/questions/4356289/php-random-string-generator
+function generateGameID($length = 4) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+    $charactersLength = strlen($characters);
+    $gameID = '';
+    for ($i = 0; $i < $length; $i++) {
+        $gameID .= $characters[rand(0, $charactersLength - 1)];
+    }
+    $_SESSION['gameID'] = $gameID;
+}
 ?>
