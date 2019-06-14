@@ -12,10 +12,12 @@
     <div id='main_div'>
         <div id='game'>
             <div id='game_info'>
+                <h2>
                 <?php
                     session_start();
                     echo "Game id: " . $_SESSION['gameID'] . '<br>';
                 ?>
+                </h2>
                 <h1 id='turn_state'></h1>
                 <h1 id='outcome'></h1>
                 <button type="button" onclick="location.href='index.php';" 
