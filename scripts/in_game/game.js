@@ -111,10 +111,10 @@ function checkGameState() {
 
     request.done(function(data) {
         // displayVictory();
-        if(data == 1) {
+        if(data == "1") {
             displayVictory();
         }
-        if(data == 0) {
+        if(data == "0") {
             displayDefeat();
         }
     });

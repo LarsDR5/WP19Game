@@ -34,11 +34,11 @@ function checkBoard($content, $filepath) {
  */
 function playerWon($content, $coin) {
     if(session_id() === $content['sessionID0'] and $coin == 0){
-        return 1;
+        return "1";
     } elseif (session_id() === $content['sessionID1'] and $coin == 1){
-        return 1;
+        return "1";
     } else {
-        return 0;
+        return "0";
     }
 }
 
