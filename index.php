@@ -24,6 +24,7 @@
     <?php include 'tpl/head_end.html'; ?>
     <body>
         <?php
+            $error_msg = '';
             if (isset($_POST['codeInput']) && isset($_POST['startButton'])) {
                 include_once 'scripts/create_session.php';
                 start_session();
@@ -41,11 +42,13 @@
                     $game_status = session_id();
                     #print_r($files);
                     #print_r($game);
-                    
+
                     $json_file = fopen($json_path, 'w');
                     fwrite($json_file, json_encode($game, JSON_PRETTY_PRINT));
                     fclose($json_file);
                     header("Location: game.php");
+                }else{
+                    $error_msg = 'Please enter a valid code!';
                 }
             }
         ?>
@@ -64,8 +67,8 @@
                     <h3 class="welcomeText">...or enter a code from a friend!</h3>
                     <form method='POST'>
                         <div class="form-group">
-                            <label for="codeInput"></label>
-                                <input type="text" class="form-control" id="codeInput" name='codeInput' placeholder="Enter a 4 character code to start a game!">
+                            <label for="codeInput" style='color: red;'><b><?=$error_msg;?></b></label>
+                            <input type="text" class="form-control" id="codeInput" name='codeInput' placeholder="Enter a 4 character code to start a game!">
                         </div>
                         <input type="submit" class="btn btn-primary btn-lg btn-block" id="startButton" name='startButton' value='Start Game!'/>
                     </form>
