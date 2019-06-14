@@ -151,7 +151,35 @@ function checkVertically($board, $coin, $i, $j) {
 function checkDiagonally($board, $coin, $i, $j) {
     $count = 0;
     for($n = 1; $n < 4; $n++) {
-        if(($i+$n >= 0) and ($i+$n <= 4) and ($j+$n >= 0) and ($j+$n <= 4)) {
+        if(($i+$n >= 0) and ($i+$n <= 4)) {
+            if(!isset($board[$i+$n ][$j]) or $board[$i+$n ][$j] != $coin) {
+                return False;
+            }
+            $count++;
+        } else {
+            return False;
+        }
+    }
+    if($count === 3) {
+        return True;
+    }
+    $count = 0;
+    for($n = 1; $n < 4; $n++) {
+        if(($i-$n >= 0) and ($i-$n <= 4)) {
+            if(!isset($board[$i-$n][$j]) or $board[$i-$n][$j] != $coin) {
+                return False;
+            }
+            $count++;
+        } else {
+            return False;
+        }
+    }
+    if($count === 3) {
+        return True;
+    }
+    $count = 0;
+    for($n = 1; $n < 4; $n++) {
+        if(($j+$n >= 0) and ($j+$n <= 4)) {
             if(!isset($board[$i][$j+$n]) or $board[$i][$j+$n] != $coin) {
                 return False;
             }
@@ -165,7 +193,7 @@ function checkDiagonally($board, $coin, $i, $j) {
     }
     $count = 0;
     for($n = 1; $n < 4; $n++) {
-        if(($i-$n >= 0) and ($i-$n <= 4) and ($j-$n >= 0) and ($j-$n <= 4)) {
+        if(($j-$n >= 0) and ($j-$n <= 4)) {
             if(!isset($board[$i][$j-$n]) or $board[$i][$j-$n] != $coin) {
                 return False;
             }
