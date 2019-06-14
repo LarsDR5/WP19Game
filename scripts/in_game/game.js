@@ -114,7 +114,7 @@ function checkGameState() {
         if(data == 1) {
             displayVictory();
         }
-        if(data === 0) {
+        if(data == 0) {
             displayDefeat();
         }
     });

@@ -18,7 +18,7 @@ function checkBoard($content, $filepath) {
                     checkVertically($board, $coin, $i, $j) or
                     checkDiagonally($board, $coin, $i, $j)){
                     winnerJSON($content, $coin, $filepath);
-                    return playerWon($content);
+                    return playerWon($content, $coin);
                 }
             }
         }
@@ -32,10 +32,10 @@ function checkBoard($content, $filepath) {
  * @param $content array Content of the JSON
  * @return bool If player has won, return True, else False.
  */
-function playerWon($content) {
-    if(session_id() === $content['sessionID0']){
+function playerWon($content, $coin) {
+    if(session_id() === $content['sessionID0'] and $coin == 0){
         return 1;
-    } elseif (session_id() === $content['sessionID1']){
+    } elseif (session_id() === $content['sessionID1'] and $coin == 1){
         return 1;
     } else {
         return 0;
