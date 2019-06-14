@@ -1,12 +1,15 @@
 <?php
+session_start();
+$session_id = session_id();
+$file_path = "../../data/" . $_SESSION['gameID'] . ".json";
 
-$file = file_get_contents('../../data/games.json');
+$file = file_get_contents($file_path);
 $content = json_decode($file, true);
 
-echo goThroughBoard($content);
+echo checkBoard($content, $file_path);
 
-function goThroughBoard($content) {
-    $board = $content[0]['grid2Darray'];
+function checkBoard($content, $filepath) {
+    $board = $content['grid'];
     for($i = 0; $i < 5; $i++) {
         for($j = 0; $j < 5; $j++) {
             if(isset($board[$i][$j])) {
@@ -14,8 +17,8 @@ function goThroughBoard($content) {
                 if(checkHorizontally($board, $coin, $i, $j) or
                     checkVertically($board, $coin, $i, $j) or
                     checkDiagonally($board, $coin, $i, $j)){
-                    winnerJSON($content, $coin);
-                    return playerWon($content, $coin);
+                    winnerJSON($content, $coin, $filepath);
+                    return playerWon($content);
                 }
             }
         }
@@ -27,14 +30,12 @@ function goThroughBoard($content) {
 /**
  * This function checks whether you have won or not.
  * @param $content array Content of the JSON
- * @param $coin int The color of the player who has won
  * @return bool If player has won, return True, else False.
  */
-function playerWon($content, $coin) {
-    if($content[0]['sessionID0'] === 12345678 and $coin === 0){
-//    if(session_id() === $content[0]['sessionID0'] and $coin === 0){
+function playerWon($content) {
+    if(session_id() === $content['sessionID0']){
         return 1;
-    } elseif (session_id() === $content[0]['sessionID1'] and $coin === 1){
+    } elseif (session_id() === $content['sessionID1']){
         return 1;
     } else {
         return 0;
@@ -43,15 +44,15 @@ function playerWon($content, $coin) {
 
 /**
  * Writes the winner to the JSON file.
- * ToDO: change filename
+ * @param $content array The JSON file.
  * @param $coin int 0 or 1 for the winning player
+ * @param $filepath string The filepath where it needs to be written to.
  */
-function winnerJSON($content, $coin) {
-    $state = &$content[0]['state'];
+function winnerJSON($content, $coin, $filepath) {
+    $state = &$content['state'];
     if(!isset($state)) {
-//        $state = $coin;
-        $content[0]['state'] = $coin;
-        $game_data = fopen('../../data/games.json', 'w');
+        $content['state'] = $coin;
+        $game_data = fopen($filepath, 'w');
         fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT));
         fclose($game_data);
     }
@@ -70,7 +71,6 @@ function checkHorizontally($board, $coin, $i, $j) {
     for($n = 1; $n < 4; $n++) {
         if(($j+$n >= 0) and ($j+$n <= 4)) {
             if(!isset($board[$i][$j+$n]) or $board[$i][$j+$n] != $coin) {
-                echo "return false ";
                 return False;
             } else {
                 $count++;
@@ -86,7 +86,6 @@ function checkHorizontally($board, $coin, $i, $j) {
     for($n = 1; $n < 4; $n++) {
         if(($j-$n >= 0) and ($j-$n <= 4)) {
             if(!isset($board[$i][$j-$n]) or $board[$i][$j-$n] != $coin) {
-                echo "return false ";
                 return False;
             } else {
                 $count++;
