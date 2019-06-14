@@ -2,7 +2,8 @@ $(function(){
     // Updates the board and turn state when the page loads
     refreshBoard();
     updateTurnState();
-    displayVictory();
+    checkGameState();
+    // displayVictory();
 
     //When a user clicks on a button this updates the board and buttons.
     $(".table_button").on('click', function() {
@@ -13,8 +14,9 @@ $(function(){
         request.done(function(){
             refreshBoard();
             updateTurnState();
+            checkGameState();
         });
-    })
+    });
     
 
     //This part checks if there has been a turn change, and changes depending on the returned value.
@@ -32,10 +34,12 @@ $(function(){
                 updated = false;
             }
         });
+        checkGameState();
 
         
     }, 2000);
 });
+
 function refreshBoard(){
     /**
      * Updates the game board.
@@ -87,6 +91,22 @@ function enableButtons(){
     });
 }
 
+/**
+ * Checks the game state and displays the corresponding message.
+ */
+function checkGameState() {
+    let request = $.post('scripts/in_game/check_board.php');
+
+    request.done(function(data) {
+        // displayVictory();
+        if(data == 1) {
+            displayVictory();
+        }
+        if(data === 0) {
+            displayDefeat();
+        }
+    });
+}
 
 function displayVictory(){
     $('#turn_state').css('display', 'none');

@@ -1,34 +1,66 @@
 <?php
 
-$file = file_get_contents('../data/games.json');
+$file = file_get_contents('../../data/games.json');
 $content = json_decode($file, true);
 
-$board = array_reverse($content[0]['grid2Darray']);
+//if($content[0]['state']) {
+//    echo 0;
+////    echo playerWon($content, 0);
+//} else {
+//    echo 1;
+//}
+//echo null;
 
-for($i = 0; $i < 5; $i++) {
-    for($j = 0; $j < 5; $j++) {
-        if($board[$i][$j]) {
-            $coin = $board[$i][$j];
-            if(checkHorizontally($board, $coin, $i, $j) or
-                checkVertically($board, $coin, $i, $j) or
-                checkDiagonally($board, $coin, $i, $j)){
-                winnerJSON($coin);
-                return $coin;
+echo goThroughBoard($content);
+
+function goThroughBoard($content) {
+    $board = $content[0]['grid2Darray'];
+    for($i = 0; $i < 5; $i++) {
+        for($j = 0; $j < 5; $j++) {
+            if(isset($board[$i][$j])) {
+                $coin = $board[$i][$j];
+                if(checkHorizontally($board, $coin, $i, $j) or
+                    checkVertically($board, $coin, $i, $j) or
+                    checkDiagonally($board, $coin, $i, $j)){
+                    echo 'test ';
+                    // winnerJSON($content, $coin);
+                    // return playerWon($content, $coin);
+                }
             }
         }
     }
+    return null;
 }
-return null;
+
+
+/**
+ * This function checks whether you have won or not.
+ * @param $content array Content of the JSON
+ * @param $coin int The color of the player who has won
+ * @return bool If player has won, return True, else False.
+ */
+function playerWon($content, $coin) {
+    if($content[0]['sessionID0'] === 12345678 and $coin === 0){
+//    if(session_id() === $content[0]['sessionID0'] and $coin === 0){
+        return 1;
+    } elseif (session_id() === $content[0]['sessionID1'] and $coin === 1){
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 /**
  * Writes the winner to the JSON file.
  * ToDO: change filename
  * @param $coin int 0 or 1 for the winning player
  */
-function winnerJSON($coin) {
+function winnerJSON($content, $coin) {
     $state = &$content[0]['state'];
-    if($state === null) {
-        $state = $coin;
+    echo $state;
+    if(!isset($state)) {
+//        $state = $coin;
+        $content[0]['state'] = $coin;
         $game_data = fopen('../../data/games.json', 'w');
         fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT));
         fclose($game_data);
@@ -48,28 +80,32 @@ function checkHorizontally($board, $coin, $i, $j) {
     for($n = 1; $n < 4; $n++) {
         if(($j+$n >= 0) and ($j+$n <= 4)) {
             if($board[$i][$j+$n] != $coin) {
+                echo "return false ";
                 return False;
+            } else {
+                $count++;
             }
-            $count++;
         } else {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     $count = 0;
     for($n = 1; $n < 4; $n++) {
         if(($j-$n >= 0) and ($j-$n <= 4)) {
             if($board[$i][$j-$n] != $coin) {
+                echo "return false ";
                 return False;
+            } else {
+                $count++;
             }
-            $count++;
         } else {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     return False;
@@ -95,7 +131,7 @@ function checkVertically($board, $coin, $i, $j) {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     $count = 0;
@@ -109,7 +145,7 @@ function checkVertically($board, $coin, $i, $j) {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     return False;
@@ -135,7 +171,7 @@ function checkDiagonally($board, $coin, $i, $j) {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     $count = 0;
@@ -149,7 +185,7 @@ function checkDiagonally($board, $coin, $i, $j) {
             return False;
         }
     }
-    if($count === 4) {
+    if($count === 3) {
         return True;
     }
     return False;
