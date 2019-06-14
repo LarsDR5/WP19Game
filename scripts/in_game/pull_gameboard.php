@@ -10,7 +10,7 @@
     //reverses array so it goes from bottom to top.
     $board = array_reverse($content['grid']);
     foreach($board as $key => $row){
-        ?><tr><?php
+        ?><tr class='game_row'><?php
         foreach($row as $key => $value){
             if($value === 0){
                 $colour = 'red';

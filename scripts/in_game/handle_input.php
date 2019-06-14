@@ -22,8 +22,8 @@
     
     changeTurn($turn);
     
-    $game_data = fopen($file_path, 'w'); 
-    fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT)); 
+    $game_data = fopen($file_path, 'w');
+    fwrite($game_data, json_encode($content, JSON_PRETTY_PRINT));
     fclose($game_data);
 
     function changeTurn(&$turn){

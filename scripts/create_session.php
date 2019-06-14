@@ -41,7 +41,4 @@ function generateGameID($length = 4) {
     }
     $_SESSION['gameID'] = $gameID;
 }
-start_session();
-regenerate_id();
-generateGameID();
 ?>

@@ -1,5 +1,8 @@
 <?php 
     require 'create_session.php';
+    start_session();
+    regenerate_id();
+    generateGameID();
     add_game();
     header("Location: ../game.php");
     exit();
