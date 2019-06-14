@@ -105,4 +105,8 @@ td{
     th{
         max-width: 15vw;
     }
+
+    #game_info{
+        width: 90%;
+    }
 }

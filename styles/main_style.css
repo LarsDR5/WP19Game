@@ -71,9 +71,13 @@ footer{
     padding-left: 200px;
 }
 
+.headerText:hover{
+    color: rgb(80, 80, 80);
+}
+
 @media(max-width: 1000px){
     #start_screen{
-        width: 100%;
+        width: 90%;
         flex-direction: column;
         justify-content: center;
     }
