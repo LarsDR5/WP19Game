@@ -14,8 +14,7 @@
             <div id='game_info'>
                 <?php
                     session_start();
-                    echo $_SESSION['gameID'] . '<br>';
-                    echo session_id();
+                    echo "Game id: " . $_SESSION['gameID'] . '<br>';
                 ?>
                 <h1 id='turn_state'></h1>
                 <h1 id='outcome'></h1>
